@@ -21,7 +21,6 @@
 <h2 style="margin-left: 45px">시간별 매출 분석</h2>
 
 <div class="table">
-    <h3>Hourly Sales Report</h3>
     <?php
     $conn = mysqli_connect("localhost", "web", "web_admin", "ewha_food_court");
     if (!$conn) {
@@ -59,7 +58,7 @@
     $result = $conn->query($sql);
 
     ?>
-    <h1>시간대별 판매량</h1>
+    <h3>시간대별 판매량</h3>
     <table border="1">
         <tr>
             <th>요일</th>
@@ -85,7 +84,6 @@
     ?>
 </div>
 <div class="table">
-    <h3>Weekly Sales Report</h3>
     <?php
     $conn = mysqli_connect("localhost", "web", "web_admin", "ewha_food_court");
     if (!$conn) {
@@ -114,7 +112,7 @@ ORDER BY
     $result = $conn->query($sql);
 
     ?>
-<h1>주간 판매량</h1>
+<h3>주간 판매량</h3>
     <table border="1">
         <tr>
             <th>요일</th>
