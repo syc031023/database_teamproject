@@ -214,12 +214,5 @@ mysqli_close($conn);
 ?>
 
 
-
-<?php
-mysqli_free_result($result);
-mysqli_close($conn);
-?>
-
-
 </body>
 </html>
