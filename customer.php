@@ -30,8 +30,7 @@
     }
 ?>
 
-<div class=table>
-<h3>우수 고객 top5</h3>
+<h3 style="margin-left: 45px">우수 고객 top5</h3>
 <?php
     $conn->query("SET @rank := 0;");
 
@@ -42,7 +41,7 @@
 
     $result = $conn->query($sql);
 
-    echo '<table border="1">
+    echo '<table border="1" style="margin-left: 45px">
     <tr>
         <th>순위</th> 
         <th>이름</th>
@@ -61,10 +60,8 @@
 
     echo '</table>'
 ?>
-</div>
-<br><br>
-<div class=table>
-<h3>우수 리뷰어 top5</h3>
+<br>
+<h3 style="margin-left: 45px">우수 리뷰어 top5</h3>
 <?php
     $conn->query("SET @rank := 0;");
     $sql = "SELECT @rank := @rank + 1 AS ranking, customer_name, recommendation
@@ -75,7 +72,7 @@
 
     $result = $conn->query($sql);
 
-    echo '<table border="1">
+    echo '<table border="1" style="margin-left: 45px">
     <tr>
         <th>순위</th> 
         <th>이름</th>
@@ -95,10 +92,8 @@
     echo '</table>'
     
 ?>
-</div>
 
-<div class="table">
-  <h2>고객 유형별 인기메뉴</h2>
+  <h2 style="margin-left: 45px">고객 유형별 인기메뉴</h2>
 <?php
     $conn = mysqli_connect("localhost", "web", "web_admin", "ewha_food_court");
     if(!$conn) {
@@ -110,9 +105,9 @@
     }
 ?>
 
-<h3>성별/연령별 주간 인기메뉴 순위 top5</h3>
+<h3 style="margin-left: 45px">성별/연령별 주간 인기메뉴 순위 top5</h3>
 
-<h4>20대 여성</h4>
+<h4 style="margin-left: 45px">20대 여성</h4>
 <?php
 
     $query = "SELECT M.menu_name, SUM(OM.quantity) AS sales
@@ -127,7 +122,7 @@
     LIMIT 5;";
     $result = mysqli_query($conn, $query);
 
-    echo '<table border="1">
+    echo '<table border="1" style="margin-left: 45px">
     <tr>
         <th>메뉴</th> 
         <th>판매량</th>
@@ -146,7 +141,7 @@
     
 ?>
 <br>
-<h4>40대 여성</h4>
+<h4 style="margin-left: 45px">40대 여성</h4>
 <?php
 
     $query = "SELECT M.menu_name, SUM(OM.quantity) AS sales
@@ -161,7 +156,7 @@
     LIMIT 5;";
     $result = mysqli_query($conn, $query);
 
-    echo '<table border="1">
+    echo '<table border="1" style="margin-left: 45px">
     <tr>
         <th>메뉴</th> 
         <th>판매량</th>
@@ -180,7 +175,7 @@
     
 ?>
 <br>
-<h4>30대 남성</h4>
+<h4 style="margin-left: 45px">30대 남성</h4>
 <?php
 
     $query = "SELECT M.menu_name, SUM(OM.quantity) AS sales
@@ -195,7 +190,7 @@
     LIMIT 5;";
     $result = mysqli_query($conn, $query);
 
-    echo '<table border="1">
+    echo '<table border="1" style="margin-left: 45px">
     <tr>
         <th>메뉴</th> 
         <th>판매량</th>
@@ -224,7 +219,6 @@ mysqli_close($conn);
 mysqli_free_result($result);
 mysqli_close($conn);
 ?>
-</div>
 
 
 </body>
