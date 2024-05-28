@@ -96,8 +96,9 @@
     
 ?>
 </div>
-<h2>고객 유형별 인기메뉴</h2>
+
 <div class="table">
+  <h2>고객 유형별 인기메뉴</h2>
 <?php
     $conn = mysqli_connect("localhost", "web", "web_admin", "ewha_food_court");
     if(!$conn) {
@@ -216,13 +217,14 @@
 mysqli_free_result($result);
 mysqli_close($conn);
 ?>
-</div>
+
 
 
 <?php
 mysqli_free_result($result);
 mysqli_close($conn);
 ?>
+</div>
 
 
 </body>
