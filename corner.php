@@ -57,11 +57,10 @@ ORDER BY
     }
     ?>
     <br>
-    <div class="table">
     <!--테이블 생성-->
-    <h3><?= $cornerName ?>의 판매량 인기 순위</h3>
+    <h3 style="margin-left: 45px"><?= $cornerName ?>의 판매량 인기 순위</h3>
 
-    <table border="1">
+    <table border="1", style="margin-left: 45px">
         <tr>
             <th>메뉴이름</th>
             <th>주문건수</th>
@@ -78,7 +77,6 @@ ORDER BY
         </tr>
     <?php } ?>
     </table>
-</div>
 
     <?php
     mysqli_free_result($result);
@@ -115,13 +113,12 @@ if (!$corner_menu_sales_result) {
     exit();
 }
 ?>
-<br><br>
+<br>
 
-<div class="table">
 <!--테이블 생성-->
-<h3>코너별 메뉴의 주문 건수와 매출</h3>
+<h3 style="margin-left: 45px">코너별 메뉴의 주문 건수와 매출</h3>
 
-<table border="1">
+<table border="1" style="margin-left: 45px">
     <tr>
         <th>코너번호</th>
         <th>메뉴번호</th>
@@ -142,7 +139,6 @@ while ($row = mysqli_fetch_array($corner_menu_sales_result)) {
     </tr>
 <?php } ?>
 </table>
-</div>
 
 <?php
 mysqli_free_result($corner_menu_sales_result);
