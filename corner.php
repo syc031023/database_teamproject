@@ -20,6 +20,7 @@
 
 <h2 style="margin-left: 45px">코너별 메뉴의 주문 건수와 매출 & 각 코너별 판매량 인기 순위</h2>
 
+
 <?php
 $conn = mysqli_connect("localhost", "web", "web_admin", "ewha_food_court");
 if (!$conn) {
@@ -55,8 +56,10 @@ ORDER BY
         exit();
     }
     ?>
+    <br>
+    <div class="table">
     <!--테이블 생성-->
-    <h1><?= $cornerName ?>의 판매량 인기 순위</h1>
+    <h3><?= $cornerName ?>의 판매량 인기 순위</h3>
 
     <table border="1">
         <tr>
@@ -75,10 +78,12 @@ ORDER BY
         </tr>
     <?php } ?>
     </table>
+</div>
 
     <?php
     mysqli_free_result($result);
 }
+
 
 showMenuOrderRanking($conn, 1, "코너 1 한식");
 showMenuOrderRanking($conn, 2, "코너 2 분식");
@@ -110,9 +115,11 @@ if (!$corner_menu_sales_result) {
     exit();
 }
 ?>
+<br><br>
 
+<div class="table">
 <!--테이블 생성-->
-<h1>코너별 메뉴의 주문 건수와 매출</h1>
+<h3>코너별 메뉴의 주문 건수와 매출</h3>
 
 <table border="1">
     <tr>
@@ -135,6 +142,7 @@ while ($row = mysqli_fetch_array($corner_menu_sales_result)) {
     </tr>
 <?php } ?>
 </table>
+</div>
 
 <?php
 mysqli_free_result($corner_menu_sales_result);
